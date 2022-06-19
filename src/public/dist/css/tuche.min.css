@@ -1,0 +1,93 @@
+
+  /* The containerplvb */
+  #vbcpdtitile{
+    margin-left:  400px;
+    margin-bottom:20px;
+    font-size: 30px;
+  }
+
+.containerplvb {
+    display: block;
+    position: relative;
+    margin-top:  10px;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 15px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default radio button */
+  .containerplvb input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  .btnAddRoom{
+    margin-left:950px;
+    margin-top:10px;
+    margin-bottom:1px;
+  }
+  .btnComeBack{
+    margin-right: 950px;
+    margin-top:10px;
+    margin-bottom:10px;
+    margin-left: 10px;
+   
+
+  }
+  .edituserclass{
+    margin-left:200px;
+    margin-right:200px;
+
+  }
+  .edittitel{
+    font-size: 30px;
+    margin-left: 290px;
+    font-weight:bolder;
+  }
+  /* Create a custom radio button */
+  .checkmarkplvb {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .containerplvb:hover input ~ .checkmarkplvb {
+    background-color: #ccc;
+  }
+  
+  /* When the radio button is checked, add a blue background */
+  .containerplvb input:checked ~ .checkmarkplvb {
+    background-color: #2196F3;
+  }
+  
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .checkmarkplvb:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the indicator (dot/circle) when checked */
+  .containerplvb input:checked ~ .checkmarkplvb:after {
+    display: block;
+  }
+  
+  /* Style the indicator (dot/circle) */
+  .containerplvb .checkmarkplvb:after {
+       top: 9px;
+      left: 9px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: white;
+  }

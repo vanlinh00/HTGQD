@@ -1,0 +1,76 @@
+<% extend("../layout/mainlayout.ejs") %>
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <p1 id="vbcpdtitile" class="mt-5">BẢNG QUYẾT ĐỊNH</p1>
+            <div class="card-body">
+              <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                  <tr>
+                    <th>STT</th>
+                    <th>TÊN CÔNG TY</th>
+                    <th>MỨC LƯƠNG</th>
+                    <th>ĐỊA ĐIỂM</th>
+                    <th>RANK CÔNG TY</th>
+                    <th>ĐPH KINH NGHIỆM</th>
+                    <th>ĐPH BẰNG CẤP</th>
+                    <!-- <th>XẾP HẠNG CÔNG TY</th> -->
+                  </tr>
+                </thead>
+                <tbody>
+<!-- 
+                  <% if(listDiemTieuChi.length!=0){ var i=1; listDiemTieuChi.forEach(function(data){ %>
+                    <tr>
+                      <td>
+                        <%=i%>
+                      </td>
+                      <td>
+                        <%=data.name %>
+                      </td>
+                      <td>
+                        <%=data.diaChi%>
+                      </td>
+                  
+                      <td>
+                        <%=data.category%>
+                      </td>
+
+                      <td class="project-actions text-right">
+                        <a class="btn btn-primary btn-sm"  href="/vanbanden/vanbanchopheduyet/pheduyet?id=<%=data.id%>">
+                            <i class="fas fa-folder">
+                            </i>
+                            Phê Duyệt
+                        </a>
+             
+                        <a class="btn btn-danger btn-sm delete-vbden" data-deletedata="<%= data.id %>" href="#">
+                          <i class="fas fa-trash">
+                          </i>
+                          Xóa Bỏ
+                        </a>
+
+                    </td>
+                    </tr>
+                    <% i++; }) %>
+                      <% } else{ %>
+                        <tr>
+                          
+                        </tr>
+                        <% } %> -->
+
+                </tbody>
+                </tbody>
+
+              </table>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div>
+  </section>
