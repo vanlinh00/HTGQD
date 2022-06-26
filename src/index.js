@@ -1,9 +1,7 @@
 const express = require('express')
 var viewEngine= require('./config/viewEngine')
 const initWebRoutes = require('./route/web');
-
 var bodyParser =require("body-parser");
-
 const app = express()
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }))

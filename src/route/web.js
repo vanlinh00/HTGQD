@@ -1,8 +1,9 @@
 
-var findCompanyController= require('../controller/findCompany')
+var workController= require('../controllers/work-controller')
 
 let initWebRoutes = async (app) => {
-    app.get('/',findCompanyController.admin);
-    app.post('/search',findCompanyController.search);
+    app.get('/',workController.getInforUser);
+    app.post('/search',workController.search);
+    app.get('/workResults',workController.workResults);
 }  
 module.exports = initWebRoutes;

@@ -4,60 +4,53 @@
       <div class="row">
         <div class="col-12">
           <div class="card">
-            <p1 id="vbcpdtitile" class="mt-5">BẢNG QUYẾT ĐỊNH</p1>
+            <p1 id="vbcpdtitile" class="mt-5">PHƯƠNG PHÁP TOP-SIS</p1>
             <div class="card-body">
               <table id="example2" class="table table-bordered table-hover">
                 <thead>
                   <tr>
                     <th>STT</th>
                     <th>TÊN CÔNG TY</th>
-                    <th>MỨC LƯƠNG</th>
+                    <th>ĐPH MỨC LƯƠNG</th>
                     <th>ĐỊA ĐIỂM</th>
                     <th>RANK CÔNG TY</th>
                     <th>ĐPH KINH NGHIỆM</th>
                     <th>ĐPH BẰNG CẤP</th>
-                    <!-- <th>XẾP HẠNG CÔNG TY</th> -->
                   </tr>
                 </thead>
                 <tbody>
-<!-- 
-                  <% if(listDiemTieuChi.length!=0){ var i=1; listDiemTieuChi.forEach(function(data){ %>
+
+                  <% if(getAllWorkOfUser.length!=0){ var i=1; getAllWorkOfUser.forEach(function(data){ %>
                     <tr>
                       <td>
                         <%=i%>
                       </td>
                       <td>
-                        <%=data.name %>
+                        <%=data.name_company %>
                       </td>
                       <td>
-                        <%=data.diaChi%>
+                        <%=data.salary_fit%>
                       </td>
                   
                       <td>
-                        <%=data.category%>
+                        <%=data.address_fit%>
                       </td>
-
-                      <td class="project-actions text-right">
-                        <a class="btn btn-primary btn-sm"  href="/vanbanden/vanbanchopheduyet/pheduyet?id=<%=data.id%>">
-                            <i class="fas fa-folder">
-                            </i>
-                            Phê Duyệt
-                        </a>
-             
-                        <a class="btn btn-danger btn-sm delete-vbden" data-deletedata="<%= data.id %>" href="#">
-                          <i class="fas fa-trash">
-                          </i>
-                          Xóa Bỏ
-                        </a>
-
-                    </td>
+                      <td>
+                        <%=data.rank_company%>
+                      </td>
+                      <td>
+                        <%=data.num_of_years_of_xp_fit%>
+                      </td>
+                      <td>
+                        <%=data.degree_fit%>
+                      </td>
                     </tr>
                     <% i++; }) %>
                       <% } else{ %>
                         <tr>
                           
                         </tr>
-                        <% } %> -->
+                        <% } %> 
 
                 </tbody>
                 </tbody>
