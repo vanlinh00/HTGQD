@@ -51,7 +51,7 @@ let getAllWork = async (user) => {
                     var CriteriaStandardized = {
                         "stt": i + 1,
                         "name_company": listCriteria[i].name_company,
-                        "salary_fit": ((listCriteria[i].salary_fit / maxSalary_fit) * 0.3).toFixed(3),
+                        "salary_fit": ((listCriteria[i].salary_fit / maxSalary_fit) * 0.5).toFixed(3),
                         "address_fit": "chua biet tinh",
                         "rank_company": ((listCriteria[i].rank_company / maxRank_company) * 0.2).toFixed(3),
                         "num_of_years_of_xp_fit": ((listCriteria[i].num_of_years_of_xp_fit / maxNum_of_years_of_xp_fit) * 0.2).toFixed(3),
@@ -59,6 +59,37 @@ let getAllWork = async (user) => {
                     }
                     listCriteriaStandardized.push(CriteriaStandardized);
                 }
+
+                
+                let arr2DcompanyAndCriteria = [];
+
+                for (let i = 0; i < listCriteriaStandardized.length; i++) {
+                    for (let j = 0; j < 5; j++) {
+                        arr2DcompanyAndCriteria[i] = [];
+                    }
+                }
+
+                for (let i = 0; i < listCriteriaStandardized.length; i++) {
+                    for (let j = 0; j < 4; j++) {
+                        if (j == 0) {
+                            arr2DcompanyAndCriteria[i][j] = listCriteriaStandardized[i].salary_fit;
+                        }
+                        if (j == 1) {
+                            arr2DcompanyAndCriteria[i][j] = listCriteriaStandardized[i].rank_company;
+                        }
+                        if (j == 2) {
+                            arr2DcompanyAndCriteria[i][j] = listCriteriaStandardized[i].num_of_years_of_xp_fit;
+                        }
+                        if (j == 3) {
+                            arr2DcompanyAndCriteria[i][j] = listCriteriaStandardized[i].degree_fit;
+                        }
+                    }
+                }
+
+                console.log("\n");
+                console.log("step 2: chuan hoa va nhan trong so");
+                console.log(arr2DcompanyAndCriteria);
+
 
                 // step 3: tim A* and A-
                 var listAstar = [];
@@ -146,33 +177,7 @@ let getAllWork = async (user) => {
                   }
                   console.log(Math.pow(num, 1/2));
                   */
-
-                let arr2DcompanyAndCriteria = [];
-
-                for (let i = 0; i < listCriteriaStandardized.length; i++) {
-                    for (let j = 0; j < 5; j++) {
-                        arr2DcompanyAndCriteria[i] = [];
-                    }
-                }
-
-                for (let i = 0; i < listCriteriaStandardized.length; i++) {
-                    for (let j = 0; j < 4; j++) {
-                        if (j == 0) {
-                            arr2DcompanyAndCriteria[i][j] = listCriteriaStandardized[i].salary_fit;
-                        }
-                        if (j == 1) {
-                            arr2DcompanyAndCriteria[i][j] = listCriteriaStandardized[i].rank_company;
-                        }
-                        if (j == 2) {
-                            arr2DcompanyAndCriteria[i][j] = listCriteriaStandardized[i].num_of_years_of_xp_fit;
-                        }
-                        if (j == 3) {
-                            arr2DcompanyAndCriteria[i][j] = listCriteriaStandardized[i].degree_fit;
-                        }
-                    }
-                }
-
-
+                 
                 var sStar = [];
                 var sMinus = [];
 
@@ -181,10 +186,10 @@ let getAllWork = async (user) => {
                     var sumSminus = 0;
                     for (let j = 0; j < arr2DcompanyAndCriteria[i].length; j++) {
                         
-                        var minus2ValueMax =arr2DcompanyAndCriteria[i][j]-listAstar[i];
+                        var minus2ValueMax =arr2DcompanyAndCriteria[i][j]-listAstar[j];
                         sumStart += Math.pow(minus2ValueMax,2);
 
-                        var minus2ValueMin= arr2DcompanyAndCriteria[i][j] -ListAminus[i];
+                        var minus2ValueMin= arr2DcompanyAndCriteria[i][j] -ListAminus[j];
                         sumSminus += Math.pow(minus2ValueMin,2);
 
                     }
