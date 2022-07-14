@@ -16,6 +16,9 @@
                     <th>RANK CÔNG TY</th>
                     <th>ĐPH KINH NGHIỆM</th>
                     <th>ĐPH BẰNG CẤP</th>
+                    <th>S*</th>
+                    <th>S-</th>
+                    <th>C*</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -33,7 +36,7 @@
                       </td>
                   
                       <td>
-                        <%=data.address_fit%>
+                        <%=data.distance_company_user%>
                       </td>
                       <td>
                         <%=data.rank_company%>
@@ -43,6 +46,16 @@
                       </td>
                       <td>
                         <%=data.degree_fit%>
+                      </td>
+
+                      <td>
+                        <%=data.sStart_Of_Company%>
+                      </td>
+                      <td>
+                        <%=data.sMinus_Of_Company%>
+                      </td>
+                      <td>
+                        <%=data.cStars_Of_Company%>
                       </td>
                     </tr>
                     <% i++; }) %>
@@ -57,6 +70,10 @@
 
               </table>
             </div>
+
+            <p4  class="mt-1 ml-3">Theo S* ta chọn công ty:   <%=chooseCompany.chooseCompanyBySstart %> </p4>
+            <p4  class="mt-1 ml-3">Theo S- ta chọn công ty: <%=chooseCompany.chooseCompanyBySminus %> </p4>
+            <p4  class="mt-1 ml-3">Theo C* ta chọn công ty:  <%=chooseCompany.chooseCompanyByCstart %> </p4>
             <!-- /.card-body -->
           </div>
           <!-- /.card -->
