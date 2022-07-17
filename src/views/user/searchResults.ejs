@@ -11,6 +11,7 @@
                   <tr>
                     <th>STT</th>
                     <th>TÊN CÔNG TY</th>
+                    <th>TÊN CÔNG VIỆC</th>
                     <th>ĐPH MỨC LƯƠNG</th>
                     <th>ĐỊA ĐIỂM</th>
                     <th>RANK CÔNG TY</th>
@@ -30,6 +31,9 @@
                       </td>
                       <td>
                         <%=data.name_company %>
+                      </td>
+                      <td>
+                        <%=data.name %>
                       </td>
                       <td>
                         <%=data.salary_fit%>
@@ -70,10 +74,10 @@
 
               </table>
             </div>
-
             <p4  class="mt-1 ml-3">Theo S* ta chọn công ty:   <%=chooseCompany.chooseCompanyBySstart %> </p4>
             <p4  class="mt-1 ml-3">Theo S- ta chọn công ty: <%=chooseCompany.chooseCompanyBySminus %> </p4>
             <p4  class="mt-1 ml-3">Theo C* ta chọn công ty:  <%=chooseCompany.chooseCompanyByCstart %> </p4>
+       
             <!-- /.card-body -->
           </div>
           <!-- /.card -->

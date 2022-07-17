@@ -38,6 +38,7 @@ let search = async function (req, res) {
    var getAllWorkOfUser = await workService.getAllWork(user);
    var chooseCompany= await workService.chooseCompany();
 
+  // console.log(getAllWorkOfUser);
    res.render('user/searchResults', { getAllWorkOfUser,chooseCompany });
 }
 

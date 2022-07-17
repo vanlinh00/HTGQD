@@ -87,6 +87,7 @@ let getAllWork = async (user) => {
 
             }
 
+      
             // console.log(getAllWork);
 
             if (getAllWork != null && getAllWork.length != 0) {
@@ -129,7 +130,7 @@ let getAllWork = async (user) => {
                         "stt": i + 1,
                         "name_company": getAllWork[i].name_company,
                         "salary_fit": salary_fit,
-                        // "address_fit": "chua biet tinh",
+                        "name":getAllWork[i].name,
                         "rank_company": getAllWork[i].rank_company,
                         "num_of_years_of_xp_fit": num_of_years_of_xp_fit,
                         "degree_fit": degree_fit,
@@ -138,6 +139,7 @@ let getAllWork = async (user) => {
                     listCriteria.push(criteria);
                 }
 
+       
 
                 // step 2: chuan hoa va nhan trong so
                 var listCriteriaStandardized = [];
@@ -148,16 +150,30 @@ let getAllWork = async (user) => {
                         "stt": i + 1,
                         "name_company": listCriteria[i].name_company,
                         "salary_fit": ((listCriteria[i].salary_fit / maxSalary_fit) * 0.3).toFixed(3),
-                        //  "address_fit": "chua biet tinh",
+                        "name":getAllWork[i].name,
                         "rank_company": ((listCriteria[i].rank_company / maxRank_company) * 0.2).toFixed(3),
                         "num_of_years_of_xp_fit": ((listCriteria[i].num_of_years_of_xp_fit / maxNum_of_years_of_xp_fit) * 0.1).toFixed(3),
                         "degree_fit": ((listCriteria[i].degree_fit / maxDegree_fit) * 0.1).toFixed(3),
                         "distance_company_user": ((listCriteria[i].distance_company_user / maxDistance_company_user) * 0.3).toFixed(3),
                     }
+
                     listCriteriaStandardized.push(CriteriaStandardized);
                 }
 
+                // cái này là thêm trọng số vào để in ra ở bước 2
+                // var weight = {
+                //     "stt": listCriteria.length+1,
+                //     "name_company":"trọng số",
+                //     "salary_fit":  0.3,
+                //     "name":"trọng số",
+                //     "rank_company":0.2,
+                //     "num_of_years_of_xp_fit": 0.1,
+                //     "degree_fit": 0.1,
+                //     "distance_company_user": 0.3
+                // }
+                //  listCriteriaStandardized.push(weight);
 
+          
                 let arr2DcompanyAndCriteria = [];
 
                 for (let i = 0; i < listCriteriaStandardized.length; i++) {   // so cong ty 
@@ -352,6 +368,7 @@ let getAllWork = async (user) => {
                     var datResult = {
                         stt: listCriteriaStandardized[i].stt,
                         name_company: listCriteriaStandardized[i].name_company,
+                        name:listCriteriaStandardized[i].name,
                         salary_fit: listCriteriaStandardized[i].salary_fit,
                         rank_company: listCriteriaStandardized[i].rank_company,
                         num_of_years_of_xp_fit: listCriteriaStandardized[i].num_of_years_of_xp_fit,
@@ -410,19 +427,20 @@ let getAllWork = async (user) => {
                     distance_company_user: ListAminus[4],
                 }
                 listDataResult.push(dataAminus);
+    
+                var weight = {
+                    "stt": listCriteriaStandardized.length+1,
+                    "name_company":"trọng số",
+                    "salary_fit":  0.3,
+                    "rank_company":0.2,
+                    "num_of_years_of_xp_fit": 0.1,
+                    "degree_fit": 0.1,
+                    "distance_company_user": 0.3
+                }
+                listDataResult.push(weight);
 
 
-                //  choose by Sstart and Cstart
-
-                //    let chooseCompanyBySstart = "";
-
-                // let maxSminus = 0;
-                // let chooseCompanyBySminus = "";
-
-                // let maxCstart = 0;
-                // let chooseCompanyByCstart = "";
-
-                resolve(listDataResult);
+     resolve(listDataResult);
             }
             else {
                 resolve(null);
